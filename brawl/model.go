@@ -1,4 +1,4 @@
-package main
+package brawl
 
 // Player represents a player in Brawl Stars
 type Player struct {
