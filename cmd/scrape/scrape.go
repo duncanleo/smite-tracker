@@ -38,6 +38,22 @@ func main() {
 			log.Println(err)
 			continue
 		}
+		// Create brawlers' data
+		for _, b := range playerStats.Brawlers {
+			var brawler model.Brawler
+			err = db.DB.
+				Where(model.Brawler{GameID: b.ID}).
+				Assign(model.Brawler{
+					GameID: b.ID,
+					Name:   b.Name,
+				}).
+				FirstOrCreate(&brawler).
+				Error
+			if err != nil {
+				log.Println(err)
+				continue
+			}
+		}
 		// Create player data
 		var playerData = model.PlayerData{
 			Player:               player,
