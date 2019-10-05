@@ -19,7 +19,7 @@ type PlayerData struct {
 	CreatedAt            time.Time  `json:"created_at"`
 	UpdatedAt            time.Time  `json:"updated_at"`
 	DeletedAt            *time.Time `sql:"index" json:"-"`
-	Player               Player     `json:"player"`
+	Player               Player     `json:"-"`
 	PlayerID             uint       `json:"-"`
 	TrophyCount          int        `json:"trophy_count"`
 	ExpLevel             int        `json:"exp_level"`
