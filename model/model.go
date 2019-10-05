@@ -4,7 +4,7 @@ import "time"
 
 // Player represents a player
 type Player struct {
-	ID        uint       `gorm:"primary_key"`
+	ID        uint       `gorm:"primary_key" json:"id"`
 	CreatedAt time.Time  `json:"created_at"`
 	UpdatedAt time.Time  `json:"updated_at"`
 	DeletedAt *time.Time `sql:"index" json:"-"`
@@ -15,7 +15,7 @@ type Player struct {
 
 // PlayerData represents the state of a player at a given time
 type PlayerData struct {
-	ID                   uint       `gorm:"primary_key"`
+	ID                   uint       `gorm:"primary_key" json:"id"`
 	CreatedAt            time.Time  `json:"created_at"`
 	UpdatedAt            time.Time  `json:"updated_at"`
 	DeletedAt            *time.Time `sql:"index" json:"-"`
@@ -35,7 +35,7 @@ type PlayerData struct {
 
 // Brawler represents a brawler
 type Brawler struct {
-	ID        uint       `gorm:"primary_key"`
+	ID        uint       `gorm:"primary_key" json:"id"`
 	CreatedAt time.Time  `json:"created_at"`
 	UpdatedAt time.Time  `json:"updated_at"`
 	DeletedAt *time.Time `sql:"index" json:"-"`
