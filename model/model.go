@@ -30,10 +30,13 @@ type PlayerData struct {
 	BestRoboRumbleTime   int        `json:"best_robo_rumble_time"`
 	BestTimeAsBigBrawler int        `json:"best_time_as_big_brawler"`
 }
+
+// Brawler represents a brawler
+type Brawler struct {
 	ID        uint       `gorm:"primary_key"`
 	CreatedAt time.Time  `json:"created_at"`
 	UpdatedAt time.Time  `json:"updated_at"`
 	DeletedAt *time.Time `sql:"index" json:"-"`
-	Player    Player     `json:"player"`
-	PlayerID  uint       `json:"-"`
+	GameID    int        `gorm:"game_id" json:"game_id"`
+	Name      string     `gorm:"name" json:"name"`
 }

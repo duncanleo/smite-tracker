@@ -7,6 +7,7 @@ import (
 	"github.com/duncanleo/brawl-scraper/model"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
+	_ "github.com/joho/godotenv/autoload"
 )
 
 var (
@@ -20,5 +21,5 @@ func init() {
 	if err != nil {
 		log.Panic(err)
 	}
-	DB.AutoMigrate(&model.Player{}, &model.PlayerData{})
+	DB.AutoMigrate(&model.Player{}, &model.PlayerData{}, &model.Brawler{})
 }
