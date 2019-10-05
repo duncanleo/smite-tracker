@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/duncanleo/brawl-scraper/model"
 	"github.com/jinzhu/gorm"
 )
 
@@ -18,4 +19,5 @@ func init() {
 	if err != nil {
 		log.Panic(err)
 	}
+	DB.AutoMigrate(&model.Player{}, &model.PlayerData{})
 }
