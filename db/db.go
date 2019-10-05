@@ -6,6 +6,7 @@ import (
 
 	"github.com/duncanleo/brawl-scraper/model"
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
 var (
