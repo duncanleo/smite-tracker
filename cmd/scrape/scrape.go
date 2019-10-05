@@ -39,7 +39,22 @@ func main() {
 			continue
 		}
 		// Create brawlers' data
-		for _, b := range playerStats.Brawlers {
+		var topBrawlerIndex = 0
+		var tempBrawlerPower = 0
+		var tempBrawlerRank = 0
+		var tempBrawlerTrophies = 0
+		var tempBrawlerStarPowerCount = 0
+		for i, b := range playerStats.Brawlers {
+			if b.Trophies > tempBrawlerTrophies &&
+				b.Rank >= tempBrawlerRank &&
+				b.Power >= tempBrawlerPower &&
+				len(b.StarPowers) >= tempBrawlerStarPowerCount {
+				topBrawlerIndex = i
+				tempBrawlerPower = b.Power
+				tempBrawlerRank = b.Rank
+				tempBrawlerTrophies = b.Trophies
+				tempBrawlerStarPowerCount = len(b.StarPowers)
+			}
 			var brawler model.Brawler
 			err = db.DB.
 				Where(model.Brawler{GameID: b.ID}).
@@ -54,6 +69,10 @@ func main() {
 				continue
 			}
 		}
+
+		var topBrawler model.Brawler
+		db.DB.First(&topBrawler, &model.Brawler{GameID: playerStats.Brawlers[topBrawlerIndex].ID})
+
 		// Create player data
 		var playerData = model.PlayerData{
 			Player:               player,
@@ -65,6 +84,7 @@ func main() {
 			DuoVictories:         playerStats.DuoVictories,
 			BestRoboRumbleTime:   playerStats.BestRoboRumbleTime,
 			BestTimeAsBigBrawler: playerStats.BestTimeAsBigBrawler,
+			TopBrawler:           topBrawler,
 		}
 		err = db.DB.Create(&playerData).Error
 		if err != nil {

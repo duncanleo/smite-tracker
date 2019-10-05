@@ -29,6 +29,8 @@ type PlayerData struct {
 	DuoVictories         int        `json:"duo_victories"`
 	BestRoboRumbleTime   int        `json:"best_robo_rumble_time"`
 	BestTimeAsBigBrawler int        `json:"best_time_as_big_brawler"`
+	TopBrawler           Brawler    `json:"top_brawler"`
+	TopBrawlerID         uint       `json:"-"`
 }
 
 // Brawler represents a brawler
