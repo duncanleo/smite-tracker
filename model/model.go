@@ -43,4 +43,6 @@ type God struct {
 	DeletedAt *time.Time `sql:"index" json:"-"`
 	GameID    string     `gorm:"game_id" json:"game_id"`
 	Name      string     `gorm:"name" json:"name"`
+	CardURL   string     `json:"card_url"`
+	IconURL   string     `json:"icon_url"`
 }
