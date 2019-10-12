@@ -1,5 +1,5 @@
 # smite-tracker
-This is a web service + script to fetch Brawl Stars data from their API.
+This is a web service + script to fetch player statistics from the SMITE API.
 
 ### Running
 #### Web service
