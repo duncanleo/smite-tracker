@@ -27,8 +27,8 @@ type PlayerData struct {
 	Losses            int        `json:"losses"`
 	MasteryLevel      int        `json:"mastery_level"`
 	Wins              int        `json:"wins"`
-	TotalAchievements int        `json:"Total_Achievements"`
-	TotalWorshippers  int        `json:"Total_Worshippers"`
+	TotalAchievements int        `json:"total_achievements"`
+	TotalWorshippers  int        `json:"total_worshippers"`
 	TopGod            God        `json:"top_god"`
 	TopGodID          uint       `json:"-"`
 	TopGodRank        int        `json:"top_god_rank"`
