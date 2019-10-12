@@ -48,10 +48,13 @@ func main() {
 			Error
 		if err != nil {
 			log.Println("Error saving/creating god", err)
+		} else {
+			log.Printf("Created/Updated god '%s'\n", god.Name)
 		}
 	}
 
 	for _, playerName := range strings.Split(os.Getenv("PLAYERS"), ",") {
+		log.Printf("Processing player '%s'\n", playerName)
 		playerIDResults, err := client.GetPlayerIDByName(session.SessionID, playerName)
 		if err != nil {
 			log.Println("Error fetching player ID using name", err)
