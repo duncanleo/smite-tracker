@@ -14,6 +14,7 @@ func StartServer() {
 	{
 		api.GET("/players", players)
 		api.GET("/player_datas", playerDatas)
+		api.GET("/gods", gods)
 	}
 
 	port := os.Getenv("PORT")
