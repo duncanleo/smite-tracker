@@ -21,5 +21,5 @@ func init() {
 	if err != nil {
 		log.Panic(err)
 	}
-	DB.AutoMigrate(&model.Player{}, &model.PlayerData{}, &model.Brawler{})
+	DB.AutoMigrate(&model.Player{}, &model.PlayerData{}, &model.God{})
 }

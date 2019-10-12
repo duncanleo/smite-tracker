@@ -9,36 +9,38 @@ type Player struct {
 	UpdatedAt time.Time  `json:"updated_at"`
 	DeletedAt *time.Time `sql:"index" json:"-"`
 	Name      string     `gorm:"name" json:"name"`
-	NameColor string     `gorm:"name_color" json:"name_color"`
-	Tag       string     `gorm:"tag" json:"tag"`
+	GameID    int        `gorm:"game_id" json:"game_id"`
+	Status    string     `json:"status"`
 }
 
 // PlayerData represents the state of a player at a given time
 type PlayerData struct {
-	ID                   uint       `gorm:"primary_key" json:"id"`
-	CreatedAt            time.Time  `json:"created_at"`
-	UpdatedAt            time.Time  `json:"updated_at"`
-	DeletedAt            *time.Time `sql:"index" json:"-"`
-	Player               Player     `json:"-"`
-	PlayerID             uint       `json:"-"`
-	TrophyCount          int        `json:"trophy_count"`
-	ExpLevel             int        `json:"exp_level"`
-	ExpPoints            int        `json:"exp_points"`
-	ThreeV3Victories     int        `json:"3v3_victories"`
-	SoloVictories        int        `json:"solo_victories"`
-	DuoVictories         int        `json:"duo_victories"`
-	BestRoboRumbleTime   int        `json:"best_robo_rumble_time"`
-	BestTimeAsBigBrawler int        `json:"best_time_as_big_brawler"`
-	TopBrawler           Brawler    `json:"top_brawler"`
-	TopBrawlerID         uint       `json:"-"`
+	ID                uint       `gorm:"primary_key" json:"id"`
+	CreatedAt         time.Time  `json:"created_at"`
+	UpdatedAt         time.Time  `json:"updated_at"`
+	DeletedAt         *time.Time `sql:"index" json:"-"`
+	Player            Player     `json:"-"`
+	PlayerID          uint       `json:"-"`
+	HoursPlayed       int        `json:"hours_played"`
+	Leaves            int        `json:"leaves"`
+	Level             int        `json:"level"`
+	Losses            int        `json:"losses"`
+	MasteryLevel      int        `json:"mastery_level"`
+	Wins              int        `json:"wins"`
+	TotalAchievements int        `json:"Total_Achievements"`
+	TotalWorshippers  int        `json:"Total_Worshippers"`
+	TopGod            God        `json:"top_god"`
+	TopGodID          uint       `json:"-"`
+	TopGodRank        int        `json:"top_god_rank"`
+	TopGodWorshippers int        `json:"top_god_worshippers"`
 }
 
-// Brawler represents a brawler
-type Brawler struct {
+// God represents a god in SMITE
+type God struct {
 	ID        uint       `gorm:"primary_key" json:"id"`
 	CreatedAt time.Time  `json:"created_at"`
 	UpdatedAt time.Time  `json:"updated_at"`
 	DeletedAt *time.Time `sql:"index" json:"-"`
-	GameID    int        `gorm:"game_id" json:"game_id"`
+	GameID    string     `gorm:"game_id" json:"game_id"`
 	Name      string     `gorm:"name" json:"name"`
 }
