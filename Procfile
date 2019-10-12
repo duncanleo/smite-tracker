@@ -1,1 +1,1 @@
-web: bin/brawl-scraper
+web: bin/smite-tracker

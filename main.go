@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/duncanleo/brawl-scraper/db"
-	"github.com/duncanleo/brawl-scraper/web"
+	"github.com/duncanleo/smite-tracker/db"
+	"github.com/duncanleo/smite-tracker/web"
 	"github.com/gin-gonic/gin"
 	_ "github.com/joho/godotenv/autoload"
 )

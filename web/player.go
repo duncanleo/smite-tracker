@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/duncanleo/brawl-scraper/db"
-	"github.com/duncanleo/brawl-scraper/model"
+	"github.com/duncanleo/smite-tracker/db"
+	"github.com/duncanleo/smite-tracker/model"
 	"github.com/gin-gonic/gin"
 )
 

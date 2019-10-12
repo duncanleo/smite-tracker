@@ -5,9 +5,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/duncanleo/brawl-scraper/brawl"
-	"github.com/duncanleo/brawl-scraper/db"
-	"github.com/duncanleo/brawl-scraper/model"
+	"github.com/duncanleo/smite-tracker/brawl"
+	"github.com/duncanleo/smite-tracker/db"
+	"github.com/duncanleo/smite-tracker/model"
 	_ "github.com/joho/godotenv/autoload"
 )
 

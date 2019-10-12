@@ -1,4 +1,4 @@
-# brawl-scraper
+# smite-tracker
 This is a web service + script to fetch Brawl Stars data from their API.
 
 ### Running

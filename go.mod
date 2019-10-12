@@ -1,4 +1,4 @@
-module github.com/duncanleo/brawl-scraper
+module github.com/duncanleo/smite-tracker
 
 go 1.12
 

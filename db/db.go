@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/duncanleo/brawl-scraper/model"
+	"github.com/duncanleo/smite-tracker/model"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	_ "github.com/joho/godotenv/autoload"
